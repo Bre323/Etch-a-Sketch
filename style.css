@@ -1,3 +1,11 @@
+:root {
+    --text-color: #181818;
+    --background: #d3d3d3;
+    --sketch-color: #e34a4a;
+    --control-color: #da4747;
+    --grid-color: #777777;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +14,8 @@
 
 body {
     font-family: 'REM', sans-serif;
+    background-color: var(--background);
+    color: var(--text-color);
 }
 
 header, footer {
@@ -22,7 +32,7 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e34a4a;
+    background-color: var(--sketch-color);
     height: 500px;
     width: 800px;
     margin: 0 auto;
@@ -37,7 +47,7 @@ main {
     gap: 25px;
     border: 1px solid black;
     border-radius: 10px;
-    background-color: #da4747;
+    background-color: var(--control-color);
     padding: 20px 15px;
     text-align: center;
     font-weight: 500;
@@ -45,6 +55,10 @@ main {
 
 .size-control > p {
     margin-bottom: 5px;
+}
+
+#slider {
+    width: 180px;
 }
 
 .color-control > p {
@@ -65,6 +79,11 @@ main {
 
 .control-bt:active {
     transform: scale(0.95);
+    box-shadow: none;
+}
+
+.color-bt:focus {
+    background-color: var(--grid-color);
     box-shadow: none;
 }
 
@@ -90,6 +109,6 @@ main {
 }
 
 .cell {
-    background-color: #777777;
+    background-color: var(--grid-color);
     border: 1px solid black;
 }
