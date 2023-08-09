@@ -22,13 +22,50 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cb1414;
+    background-color: #e34a4a;
     height: 500px;
     width: 800px;
     margin: 0 auto;
     padding: 50px;
     border-radius: 10px;
     box-shadow: 4px 4px 4px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #da4747;
+    padding: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.size-control > p {
+    margin-bottom: 5px;
+}
+
+.color-control > p {
+    margin-bottom: 10px;
+}
+
+.color-bt {
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 1px;
+    transition: 0.25s;
+}
+
+.color-bt:hover {
+    opacity: 0.95;
+}
+
+.color-bt:active {
+    transform: scale(0.95);
+    box-shadow: none;
 }
 
 .footer-link {
