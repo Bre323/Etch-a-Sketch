@@ -7,3 +7,30 @@
 body {
     font-family: 'REM', sans-serif;
 }
+
+header, footer {
+    font-weight: 400;
+    text-align: center;
+    margin: 25px 0;
+}
+
+header > h1 {
+    font-weight: 700;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cb1414;
+    height: 500px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px;
+}
+
+.footer-link {
+    text-decoration: none;
+}

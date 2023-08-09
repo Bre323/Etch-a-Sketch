@@ -11,5 +11,31 @@
         <script src="./script.js" defer></script>
     </head>
 
-    <body></body>
+    <body>
+        <header>
+            <h1>Etch a Sketch</h1>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="size-control">
+                    <p>Screen Size</p>
+                    <input type="range" min="8" max="64" step="1">
+                </div>
+
+                <div class="color-control">
+                    <p>Color Mode</p>
+                    <button class="color-bt">Black</button>
+                    <button class="color-bt">White</button>
+                    <button class="color-bt">Rainbow</button>
+                </div>
+            </div>
+
+            <div class="screen"></div>
+        </main>
+
+        <footer>
+            <p>Made by <a class="footer-link" href="https://github.com/Bre323">Bre323</a></p>
+        </footer>
+    </body>
 </html>
