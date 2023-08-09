@@ -68,11 +68,11 @@ main {
     box-shadow: none;
 }
 
-.erase-bt {
+.erase-div {
     margin-top: 20px;
 }
 
-.erase-bt > button {
+.erase-div > button {
     height: 25px;
     width: 75px;
 }
