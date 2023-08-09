@@ -34,8 +34,56 @@ function changeSize(value) {
     }
 }
 
+function paintBlack() {
+    let val = slider.value;
+    let cell = screen.children;
+
+    for(let i = 0; i < val*val; i++) {
+        cell[i].addEventListener('mouseover', function(){
+            cell[i].style.backgroundColor = 'black';
+        })
+    }
+}
+
+function paintWhite() {
+    let val = slider.value;
+    let cell = screen.children;
+
+    for(let i = 0; i < val*val; i++) {
+        cell[i].addEventListener('mouseover', function(){
+            cell[i].style.backgroundColor = 'white';
+        })
+    }
+}
+
+function paintRainbow() {
+    let colors = ['#ee1100', '#ff6644', '#feae2d', '#aacc22', '#11aabb', '#4444dd', '#442299'];
+    let val = slider.value;
+    let cell = screen.children;
+
+    for(let i = 0; i < val*val; i++) {
+        cell[i].addEventListener('mouseover', function(){
+            let randomIndex = Math.floor((Math.random() * 7));
+            cell[i].style.backgroundColor = colors[randomIndex];
+        })
+    }
+}
+
+function eraseScreen() {
+    let val = slider.value;
+    let cell = screen.children;
+
+    for(let i = 0; i < val*val; i++) {
+        cell[i].style.backgroundColor = '#777777';
+    }
+}
+
 
 slider.oninput = event => changeSize(event.target.value);
+black.onclick = () => paintBlack();
+white.onclick = () => paintWhite();
+rainbow.onclick = () => paintRainbow();
+erase.onclick = () => eraseScreen();
 
 
 generateScreen();
