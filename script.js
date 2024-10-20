@@ -73,9 +73,9 @@ function eraseScreen() {
 
 
 slider.oninput = event => changeSize(event.target.value);
-black.onclick = () => paintBlack();
-white.onclick = () => paintWhite();
-rainbow.onclick = () => paintRainbow();
+black.onclick = () => handlePainting('black');
+white.onclick = () => handlePainting('white');
+rainbow.onclick = () => handlePainting('rainbow');
 erase.onclick = () => eraseScreen();
 
 
