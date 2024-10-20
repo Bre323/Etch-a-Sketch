@@ -34,40 +34,33 @@ function changeSize(value) {
     }
 }
 
-function paintBlack() {
-    let val = slider.value;
-    let cell = screen.children;
-
-    for(let i = 0; i < val*val; i++) {
-        cell[i].addEventListener('mouseover', function(){
-            cell[i].style.backgroundColor = 'black';
-        })
-    }
-}
-
-function paintWhite() {
-    let val = slider.value;
-    let cell = screen.children;
-
-    for(let i = 0; i < val*val; i++) {
-        cell[i].addEventListener('mouseover', function(){
-            cell[i].style.backgroundColor = 'white';
-        })
-    }
-}
-
-function paintRainbow() {
+function handlePainting(color) {
     let colors = ['#ee1100', '#ff6644', '#feae2d', '#aacc22', '#11aabb', '#4444dd', '#442299'];
     let val = slider.value;
     let cell = screen.children;
-
+  
     for(let i = 0; i < val*val; i++) {
-        cell[i].addEventListener('mouseover', function(){
+      cell[i].addEventListener('mouseover', () => {
+        switch(color) {
+          case 'black':
+            cell[i].style.backgroundColor = 'black';
+            break;
+  
+          case 'white':
+            cell[i].style.backgroundColor = 'white';
+            break;
+  
+          case 'rainbow':
             let randomIndex = Math.floor((Math.random() * 7));
             cell[i].style.backgroundColor = colors[randomIndex];
-        })
+            break;
+  
+          default:
+            break;
+        }
+      })
     }
-}
+  }
 
 function eraseScreen() {
     let val = slider.value;
