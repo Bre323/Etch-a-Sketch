@@ -62,13 +62,12 @@ function handlePainting(color) {
     }
   }
 
-function eraseScreen() {
-    let val = slider.value;
-    let cell = screen.children;
+function eraseScreen(value) {
+  let val = slider.value;
+  let cell = screen.children;
 
-    for(let i = 0; i < val*val; i++) {
-        cell[i].style.backgroundColor = '#777777';
-    }
+  removeAllChildNodes(screen);
+  generateScreen(value);  
 }
 
 
@@ -76,7 +75,7 @@ slider.oninput = event => changeSize(event.target.value);
 black.onclick = () => handlePainting('black');
 white.onclick = () => handlePainting('white');
 rainbow.onclick = () => handlePainting('rainbow');
-erase.onclick = () => eraseScreen();
+erase.onclick = () => eraseScreen(slider.value);
 
 
 generateScreen();
