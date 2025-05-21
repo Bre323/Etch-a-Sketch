@@ -29,3 +29,5 @@ function Display() {
     </div>
   )
 }
+
+export default Display;

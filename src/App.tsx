@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Display from './components/Display';
 import './App.css'
 
 function App() {
@@ -12,7 +11,9 @@ function App() {
         <h1>Etch a Sketch</h1>
       </header>
 
-      <main></main>
+      <main>
+        <Display />
+      </main>
 
       <footer>
         <p>Made by <a href="https://github.com/Bre323">Bre323</a></p>
