@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Display() {
+function Controls() {
   return (
     <div className="controls">
       <div className="size-control">
@@ -30,4 +30,4 @@ function Display() {
   )
 }
 
-export default Display;
+export default Controls;

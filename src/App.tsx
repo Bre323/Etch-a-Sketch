@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Display from './components/Display';
+import Controls from './components/Controls';
 import './App.css'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       </header>
 
       <main>
-        <Display />
+        <Controls />
       </main>
 
       <footer>
