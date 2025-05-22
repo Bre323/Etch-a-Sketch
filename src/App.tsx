@@ -11,6 +11,7 @@ function App() {
 
       <main>
         <Controls />
+        <div className="screen"></div>
       </main>
 
       <footer>

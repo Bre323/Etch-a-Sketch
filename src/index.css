@@ -38,6 +38,18 @@ main {
   border-radius: 10px;
 }
 
+.screen {
+  display: grid;
+  grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+  height: 100%;
+  width: 60%;
+}
+
+.cell {
+  background-color: var(--grid-color);
+  border: 1px solid black;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
