@@ -6,6 +6,11 @@ function App() {
   let [size, setSize] = useState(8);
 
 
+  const changeSize = (event: { target: { value: string; }; }) => {
+    setSize(parseInt(event.target.value));
+    //generateScreen(size);
+  }
+
   const generateScreen = (size: number): void => {
     let screen = document.querySelector('.screen') as HTMLDivElement;
     screen.innerHTML = '';
@@ -34,7 +39,7 @@ function App() {
       </header>
 
       <main>
-        <Controls />
+        <Controls changeSize={changeSize} currentSize={size} />
         <div className="screen"></div>
       </main>
 

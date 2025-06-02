@@ -1,19 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../styles/Controls.css';
 
-function Controls() {
+interface ControlProps {
+  changeSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  currentSize: number;
+}
+
+function Controls({ changeSize, currentSize }: ControlProps) {
   return (
     <div className="controls">
       <div className="size-control">
         <p>Screen Size</p>
-        <p id="size-value">8</p>
+        <p id="size-value">{currentSize}</p>
         <input 
           id="slider" 
           type="range" 
           min={8} 
           max={64} 
-          step={2} 
-          value={8} 
+          step={2}
+          value={currentSize}
+          onChange={changeSize}
         />
       </div>
 
