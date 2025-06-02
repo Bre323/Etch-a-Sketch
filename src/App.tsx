@@ -15,7 +15,7 @@ function App() {
     while(parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
-}
+  }
 
   const generateScreen = (size: number): void => {
     let screen = document.querySelector('.screen') as HTMLDivElement;
