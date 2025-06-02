@@ -1,8 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Controls from './components/Controls';
 import './App.css'
 
 function App() {
+  function generateScreen(): void {
+      let screen = document.querySelector('.screen') as HTMLDivElement;
+      screen.innerHTML = '';
+
+      if(screen) {
+        for(let i = 0; i < 64; i++) {
+          let div = document.createElement('div');
+          div.classList.add('cell');
+          screen.appendChild(div);
+        }
+      }
+      else {
+        console.error("The 'screen' element was not found!");
+      }
+    }
+
+  useEffect(() => {
+    generateScreen();
+  }, [])
+
   return (
     <>
       <header>
