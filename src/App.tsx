@@ -8,14 +8,23 @@ function App() {
 
   const changeSize = (event: { target: { value: string; }; }) => {
     setSize(parseInt(event.target.value));
-    //generateScreen(size);
+    generateScreen(size);
   }
+
+  const removeAllChildNodes = (parent: HTMLDivElement) => {
+    while(parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
   const generateScreen = (size: number): void => {
     let screen = document.querySelector('.screen') as HTMLDivElement;
     screen.innerHTML = '';
 
     if(screen) {
+      removeAllChildNodes(screen);
+      screen.setAttribute('style', `grid-template-columns: repeat(${size}, 1fr); grid-template-rows: repeat(${size}, 1fr)`);
+
       for(let i = 0; i < size * size; i++) {
         let div = document.createElement('div');
         div.classList.add('cell');
