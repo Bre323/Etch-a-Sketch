@@ -1,27 +1,31 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import Controls from './components/Controls';
-import './App.css'
+import './App.css';
 
 function App() {
-  function generateScreen(): void {
-      let screen = document.querySelector('.screen') as HTMLDivElement;
-      screen.innerHTML = '';
+  let [size, setSize] = useState(8);
 
-      if(screen) {
-        for(let i = 0; i < 64; i++) {
-          let div = document.createElement('div');
-          div.classList.add('cell');
-          screen.appendChild(div);
-        }
-      }
-      else {
-        console.error("The 'screen' element was not found!");
+
+  const generateScreen = (size: number): void => {
+    let screen = document.querySelector('.screen') as HTMLDivElement;
+    screen.innerHTML = '';
+
+    if(screen) {
+      for(let i = 0; i < size * size; i++) {
+        let div = document.createElement('div');
+        div.classList.add('cell');
+        screen.appendChild(div);
       }
     }
+    else {
+      console.error("The 'screen' element was not found!");
+    }
+  }
 
   useEffect(() => {
-    generateScreen();
+    generateScreen(size);
   }, [])
+
 
   return (
     <>
@@ -41,4 +45,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
