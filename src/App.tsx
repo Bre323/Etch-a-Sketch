@@ -19,7 +19,6 @@ function App() {
 
   const generateScreen = (size: number): void => {
     let screen = document.querySelector('.screen') as HTMLDivElement;
-    screen.innerHTML = '';
 
     if(screen) {
       removeAllChildNodes(screen);
