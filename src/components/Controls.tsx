@@ -3,9 +3,10 @@ import '../styles/Controls.css';
 interface ControlProps {
   changeSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
   currentSize: number;
+  handlePainting: (color: string) => void;
 }
 
-function Controls({ changeSize, currentSize }: ControlProps) {
+function Controls({ changeSize, currentSize, handlePainting }: ControlProps) {
   return (
     <div className="controls">
       <div className="size-control">
@@ -24,9 +25,9 @@ function Controls({ changeSize, currentSize }: ControlProps) {
 
       <div className="color-control">
         <p>Color Mode</p>
-        <button id="black-bt" className="control-bt color-bt">Black</button>
-        <button id="white-bt" className="control-bt color-bt">White</button>
-        <button id="rainbow-bt" className="control-bt color-bt">Rainbow</button>
+        <button id="black-bt" className="control-bt color-bt" onClick={() => handlePainting('black')}>Black</button>
+        <button id="white-bt" className="control-bt color-bt" onClick={() => handlePainting('white')}>White</button>
+        <button id="rainbow-bt" className="control-bt color-bt" onClick={() => handlePainting('rainbow')}>Rainbow</button>
       </div>
 
       <div className="erase-div">
