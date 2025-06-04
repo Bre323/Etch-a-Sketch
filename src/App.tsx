@@ -62,7 +62,13 @@ function App() {
       });
     }
   };
-  
+
+  const eraseScreen = () => {
+    let screen = document.querySelector('.screen') as HTMLDivElement;
+    removeAllChildNodes(screen);
+    generateScreen(size);
+  }
+
   useEffect(() => {
     generateScreen(size);
   }, []);
@@ -75,7 +81,7 @@ function App() {
       </header>
 
       <main>
-        <Controls changeSize={changeSize} currentSize={size} handlePainting={handlePainting} />
+        <Controls changeSize={changeSize} currentSize={size} handlePainting={handlePainting} eraseScreen={eraseScreen} />
         <div className="screen"></div>
       </main>
 

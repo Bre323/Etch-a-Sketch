@@ -4,9 +4,10 @@ interface ControlProps {
   changeSize: (event: React.ChangeEvent<HTMLInputElement>) => void;
   currentSize: number;
   handlePainting: (color: string) => void;
+  eraseScreen: () => void;
 }
 
-function Controls({ changeSize, currentSize, handlePainting }: ControlProps) {
+function Controls({ changeSize, currentSize, handlePainting, eraseScreen }: ControlProps) {
   return (
     <div className="controls">
       <div className="size-control">
@@ -31,7 +32,7 @@ function Controls({ changeSize, currentSize, handlePainting }: ControlProps) {
       </div>
 
       <div className="erase-div">
-        <button id="erase-bt" className="control-bt">Erase</button>
+        <button id="erase-bt" className="control-bt" onClick={() => eraseScreen()}>Erase</button>
       </div>
     </div>
   )
