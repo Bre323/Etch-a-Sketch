@@ -3,7 +3,6 @@ import Controls from './components/Controls';
 import './App.css';
 
 function App() {
-  let [color, setColor] = useState('');
   let [size, setSize] = useState(8);
 
 
@@ -42,32 +41,25 @@ function App() {
     let cell = screen.children as HTMLCollectionOf<HTMLElement>;
 
     for(let i = 0; i < size * size; i++) {
-      switch(color) {
-        case 'black':
-          setColor('black');
-          cell[i].addEventListener('mouseover', () => {
-            cell[i].style.backgroundColor = color;
-          })
-          break;
+      cell[i].addEventListener('mouseover', () => {
+        switch(color) {
+          case 'black':
+            cell[i].style.backgroundColor = 'black';
+            break;
 
-        case 'white':
-          setColor('white');
-          cell[i].addEventListener('mouseover', () => {
-            cell[i].style.backgroundColor = color;
-          })
-          break;
+          case 'white':
+            cell[i].style.backgroundColor = 'white';
+            break;
 
-        case 'rainbow':
-          setColor('rainbow');
-          cell[i].addEventListener('mouseover', () => {
+          case 'rainbow':
             let randomIndex = Math.floor((Math.random() * 7));
             cell[i].style.backgroundColor = colors[randomIndex];
-          })
-          break;
+            break;
 
-        default:
-          break;
-      }
+          default:
+            break;
+        }
+      });
     }
   };
 
